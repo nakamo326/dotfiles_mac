@@ -1,0 +1,16 @@
+#install scoop
+Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+iwr -useb get.scoop.sh | iex
+
+
+scoop install aria2
+scoop install git
+scoop install sudo
+
+#add extras bucket
+scoop bucket add extras
+
+scoop install 7zip discord mpc-be python gimp windows-terminal sublime-text
+
+#copy win-terminal settings.json
+Copy-Item ./windows-terminal_settings.json $LOCALAPPDATA\Microsoft\Windows Terminal\settings.json
