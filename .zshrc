@@ -6,7 +6,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Set up the prompt
-
 autoload -Uz promptinit
 promptinit
 prompt adam1
@@ -51,8 +50,6 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# export USER=ynakamot
-# export MAIL=$USER@student.42tokyo.jp
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
 export MAKEFLAGS=-j4
 alias mkr="make fclean && make"
@@ -74,17 +71,14 @@ alias la='exa -aF --icons'
 alias lla='exa -laF --icons'
 alias dc='docker-compose'
 alias cat='bat'
-alias pbcopy='clip.exe'
 alias cpp='clang++'
-alias clang++='clang++-12'
-alias clang-format='clang-format-12'
-alias clang-tidy='clang-tidy-12'
 # alias vim='nvim'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# zplug
 source ~/.zplug/init.zsh
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
@@ -93,7 +87,6 @@ zplug "plugins/git",   from:oh-my-zsh
 zplug "chrissicool/zsh-256color"
 zplug "romkatv/powerlevel10k", as:theme, depth:1
 zplug "zsh-users/zsh-completions"
-
 
 if ! zplug check --verbose; then
 	printf "Install? [y/N]: "
