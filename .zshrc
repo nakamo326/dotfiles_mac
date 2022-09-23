@@ -20,9 +20,13 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 HISTFILE=~/.zsh_history
 
+# add brew completion
+fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
+
 # Use modern completion system
 autoload -Uz compinit
 compinit
+
 setopt auto_list
 setopt auto_menu
 setopt auto_cd
@@ -50,14 +54,13 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
 export MAKEFLAGS=-j4
 alias mkr="make fclean && make"
 alias norm='norminette'
 alias gwww='gcc -Wall -Wextra -Werror'
 
 # colored GCC warnings and errors
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'↲
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 alias stmux='tmux source-file ~/.tmux.conf'
 alias venv='source ~/venv/.venv/bin/activate'
