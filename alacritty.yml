@@ -89,20 +89,6 @@ font:
   normal:
     family: "HackGenNerd Console"
     style: Regular
-
-  bold:
-    family: "HackGenNerd Console"
-    style: Bold
-
-  italic:
-    family: "HackGenNerd Console"
-    style: Italic
-
-  bold_italic:
-    family: "HackGenNerd Console"
-    style: Bold Italic
-
-  # Point size
   size: 16.0
 
 window:
