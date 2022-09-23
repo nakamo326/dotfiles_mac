@@ -107,3 +107,7 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export PATH=$PATH:/usr/local/go/bin
+
+# volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
