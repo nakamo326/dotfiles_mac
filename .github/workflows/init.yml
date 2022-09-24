@@ -1,7 +1,7 @@
 name: check install script
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 jobs:
   run-install-sh:
