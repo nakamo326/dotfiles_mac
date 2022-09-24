@@ -4,14 +4,14 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/nakamo/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin('/Users/nakamo/.cache/dein')
+call dein#begin($HOME . '/.cache/dein')
 
 " Let dein manage dein
 " Required:
-call dein#add('/Users/nakamo/.cache/dein/repos/github.com/Shougo/dein.vim')
+call dein#add($HOME . '/.cache/dein/repos/github.com/Shougo/dein.vim')
 
 let s:toml      = '$HOME/dotfiles/dein.toml'
 let s:lazy_toml = '$HOME/dotfiles/dein_lazy.toml'
