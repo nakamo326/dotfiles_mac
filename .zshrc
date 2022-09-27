@@ -54,6 +54,8 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 export MAKEFLAGS=-j4
 alias mkr="make fclean && make"
+alias make="make "
+alias re="fclean && make"
 alias stmux='tmux source-file ~/.tmux.conf'
 alias venv='source ~/venv/.venv/bin/activate'
 alias ..='cd ..'
