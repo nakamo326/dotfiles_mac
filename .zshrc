@@ -54,8 +54,6 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 export MAKEFLAGS=-j4
 alias mkr="make fclean && make"
-alias gwww='gcc -Wall -Wextra -Werror'
-
 alias stmux='tmux source-file ~/.tmux.conf'
 alias venv='source ~/venv/.venv/bin/activate'
 alias ..='cd ..'
@@ -71,7 +69,6 @@ alias cat='bat'
 alias cpp='clang++'
 # alias vim='nvim'
 
-# zplug
 source ~/.zplug/init.zsh
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
