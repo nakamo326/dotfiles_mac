@@ -22,22 +22,21 @@ fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 autoload -Uz compinit
 compinit
 
+#bash completion
+# autoload -Uz +X bashcompinit && bashcompinit
+# source /usr/local/etc/bash_completion.d/az
+
 setopt auto_list
 setopt auto_menu
 setopt auto_cd
 setopt nonomatch
-
-autoload colors
-colors
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-# eval "$(dircolors -b)"
 zstyle ':completion:*:default' menu select=1
-export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
@@ -51,7 +50,6 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 export MAKEFLAGS=-j4
 alias mkr="make fclean && make"
-alias norm='norminette'
 alias gwww='gcc -Wall -Wextra -Werror'
 
 # colored GCC warnings and errors
@@ -60,8 +58,8 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 alias stmux='tmux source-file ~/.tmux.conf'
 alias venv='source ~/venv/.venv/bin/activate'
 alias ..='cd ..'
-alias ..2='cd ../..'
-alias ..3='cd ../../..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias wo='cd ~/workspace'
 alias 42='cd ~/workspace/42cursus/'
 alias ls='exa -F --icons'
