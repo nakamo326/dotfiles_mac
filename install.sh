@@ -7,8 +7,9 @@ sh ./dein_installer.sh ~/.cache/dein
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/alacritty.yml ~/.alacritty.yml
-mkdir -p ~/.config && ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
+mkdir -p ~/.config
+ln -s ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
+ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
 
 # ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim
 # ln -s ~/dotfiles/.wezterm.lua ~/.wezterm.lua
