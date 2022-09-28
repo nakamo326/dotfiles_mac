@@ -16,6 +16,7 @@ symbol = " "
 
 [time]
 disabled = false
-format = ' [$time]($style) '
+format = '[ $time]($style) '
+style = "bold green"
 time_format = "%H:%M:%S"
 utc_time_offset = "+9"
