@@ -1,0 +1,21 @@
+format = """
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$fill\
+$all\
+$time\
+$line_break\
+$character"""
+
+[fill]
+symbol = " "
+
+[time]
+disabled = false
+format = ' [$time]($style) '
+time_format = "%H:%M:%S"
+utc_time_offset = "+9"
