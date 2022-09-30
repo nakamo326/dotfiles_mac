@@ -3,8 +3,20 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-" Required:
-set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
+" dein.vim settings {{{
+  " install dir {{{
+  let s:dein_dir = expand('~/.cache/dein')
+  let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+  " }}}
+  
+  " dein installation check {{{
+  if &runtimepath !~# '/dein.vim'
+    if !isdirectory(s:dein_repo_dir)
+      execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+    endif
+    execute 'set runtimepath^=' . s:dein_repo_dir
+  endif
+  " }}}
 
 " Required:
 call dein#begin($HOME . '/.cache/dein')

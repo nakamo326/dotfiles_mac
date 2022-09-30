@@ -1,21 +1,20 @@
 #!/bin/bash
 
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein_installer.sh
-# For example, we just use `~/.cache/dein` as installation directory
-sh ./dein_installer.sh ~/.cache/dein
-
+# create links
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 mkdir -p ~/.config
 ln -s ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
 ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
-
 # ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim
 # ln -s ~/dotfiles/.wezterm.lua ~/.wezterm.lua
 
 # install volta without fixing zshrc
 curl https://get.volta.sh | bash -s -- --skip-setup
+
+# disable apple music
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew update
