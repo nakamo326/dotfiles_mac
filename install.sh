@@ -17,5 +17,6 @@ curl https://get.volta.sh | bash -s -- --skip-setup
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 brew update
 brew bundle

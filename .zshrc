@@ -95,6 +95,9 @@ alias cat='bat'
 alias cpp='clang++'
 # alias vim='nvim'
 
+# add brew path
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # source "$HOME/.cargo/env"
 
 # set PATH so it includes user's private bin if it exists
@@ -108,15 +111,12 @@ export PATH=$PATH:/usr/local/go/bin
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-# multipass microk8s path
-export KUBECONFIG=~/microk8s-config.yaml
-
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 # pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 
 # zoxide
 eval "$(zoxide init zsh)"
@@ -126,3 +126,7 @@ eval "$(zoxide init zsh)"
 
 # starship
 eval "$(starship init zsh)"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/pc221203/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
