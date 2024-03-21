@@ -87,15 +87,16 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias wo='cd ~/workspace'
 alias 42='cd ~/workspace/42cursus/'
-alias ls='exa -F --icons'
-alias la='exa -aF --icons'
-alias lla='exa -laF --icons'
+alias ls='eza --icons --git --time-style relative'
+alias la='eza --icons --git --time-style relative -a'
+alias lla='eza --icons --git --time-style relative -al'
 alias dc='docker-compose'
 alias cat='bat'
 alias cpp='clang++'
+alias tf='terraform'
 # alias vim='nvim'
 
-# source "$HOME/.cargo/env"
+source "$HOME/.cargo/env"
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
@@ -104,6 +105,9 @@ fi
 
 export PATH=$PATH:/usr/local/go/bin
 
+# add python path
+export PATH=$PATH:$HOME/Library/Python/3.11/bin
+
 # volta
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
@@ -111,12 +115,12 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # multipass microk8s path
 export KUBECONFIG=~/microk8s-config.yaml
 
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+# export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# # pyenv
+# export PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 
 # zoxide
 eval "$(zoxide init zsh)"
