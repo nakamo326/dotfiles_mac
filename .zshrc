@@ -96,6 +96,9 @@ alias cpp='clang++'
 alias tf='terraform'
 # alias vim='nvim'
 
+# add brew path
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 source "$HOME/.cargo/env"
 
 # set PATH so it includes user's private bin if it exists
@@ -112,12 +115,9 @@ export PATH=$PATH:$HOME/Library/Python/3.11/bin
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-# multipass microk8s path
-export KUBECONFIG=~/microk8s-config.yaml
-
 # export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
-# # pyenv
+# pyenv
 # export PYENV_ROOT="$HOME/.pyenv"
 # command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
