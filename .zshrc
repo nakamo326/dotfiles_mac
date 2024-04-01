@@ -46,9 +46,16 @@ fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 autoload -Uz compinit
 compinit
 
-#bash completion
-# autoload -Uz +X bashcompinit && bashcompinit
-# source /usr/local/etc/bash_completion.d/az
+#enable bash completion
+autoload -Uz +X bashcompinit && bashcompinit
+source /opt/homebrew/etc/bash_completion.d/az
+
+
+# add kubecl completion
+source <(kubectl completion zsh)
+
+# terraform completion
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 setopt auto_list
 setopt auto_menu
@@ -93,12 +100,13 @@ alias lla='exa -laF --icons'
 alias dc='docker-compose'
 alias cat='bat'
 alias cpp='clang++'
+alias tf='terraform'
 # alias vim='nvim'
 
 # add brew path
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# source "$HOME/.cargo/env"
+source "$HOME/.cargo/env"
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
@@ -124,9 +132,9 @@ eval "$(zoxide init zsh)"
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# pyenv (mac)
+eval "$(pyenv init --path)"
+
 # starship
 eval "$(starship init zsh)"
 
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/pc221203/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
