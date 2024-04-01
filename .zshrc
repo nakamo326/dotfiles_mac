@@ -94,9 +94,9 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias wo='cd ~/workspace'
 alias 42='cd ~/workspace/42cursus/'
-alias ls='exa -F --icons'
-alias la='exa -aF --icons'
-alias lla='exa -laF --icons'
+alias ls='eza --icons --git --time-style relative'
+alias la='eza --icons --git --time-style relative -a'
+alias lla='eza --icons --git --time-style relative -al'
 alias dc='docker-compose'
 alias cat='bat'
 alias cpp='clang++'
@@ -115,11 +115,14 @@ fi
 
 export PATH=$PATH:/usr/local/go/bin
 
+# add python path
+export PATH=$PATH:$HOME/Library/Python/3.11/bin
+
 # volta
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+# export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 # pyenv
 # export PYENV_ROOT="$HOME/.pyenv"
@@ -137,4 +140,3 @@ eval "$(pyenv init --path)"
 
 # starship
 eval "$(starship init zsh)"
-
