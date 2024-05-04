@@ -122,8 +122,6 @@ export PATH=$PATH:$HOME/Library/Python/3.11/bin
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-# export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-
 # pyenv
 # export PYENV_ROOT="$HOME/.pyenv"
 # command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -140,3 +138,10 @@ eval "$(pyenv init --path)"
 
 # starship
 eval "$(starship init zsh)"
+
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
