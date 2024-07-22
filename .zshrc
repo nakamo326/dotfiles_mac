@@ -105,6 +105,7 @@ alias tf='terraform'
 
 # add brew path
 eval "$(/opt/homebrew/bin/brew shellenv)"
+export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
 
 source "$HOME/.cargo/env"
 
@@ -131,7 +132,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 eval "$(zoxide init zsh)"
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 # pyenv (mac)
 eval "$(pyenv init --path)"
