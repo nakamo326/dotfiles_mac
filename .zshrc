@@ -130,6 +130,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 # zoxide
 eval "$(zoxide init zsh)"
+unalias zi
 
 # fzf
 source <(fzf --zsh)
