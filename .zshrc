@@ -93,7 +93,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias wo='cd ~/workspace'
-alias 42='cd ~/workspace/42cursus/'
 alias ls='eza --icons --git --time-style relative'
 alias la='eza --icons --git --time-style relative -a'
 alias lla='eza --icons --git --time-style relative -al'
@@ -127,6 +126,9 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # export PYENV_ROOT="$HOME/.pyenv"
 # command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
+
+# mise
+eval "$(~/.local/bin/mise activate zsh)"
 
 # zoxide
 eval "$(zoxide init zsh)"
