@@ -128,7 +128,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # eval "$(pyenv init -)"
 
 # mise
-eval "$(~/.local/bin/mise activate zsh)"
+eval "$(/opt/homebrew/bin/mise activate zsh)"
 
 # zoxide
 eval "$(zoxide init zsh)"
