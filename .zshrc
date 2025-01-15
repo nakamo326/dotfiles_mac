@@ -118,10 +118,6 @@ export PATH=$PATH:/usr/local/go/bin
 # add python path
 export PATH=$PATH:$HOME/Library/Python/3.11/bin
 
-# volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
 # pyenv
 # export PYENV_ROOT="$HOME/.pyenv"
 # command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
