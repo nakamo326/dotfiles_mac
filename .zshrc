@@ -113,8 +113,6 @@ if [ -d "$HOME/.local/bin" ] ; then
 	PATH="$HOME/.local/bin:$PATH"
 fi
 
-export PATH=$PATH:/usr/local/go/bin
-
 # add python path
 export PATH=$PATH:$HOME/Library/Python/3.11/bin
 
