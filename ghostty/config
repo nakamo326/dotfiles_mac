@@ -1,0 +1,10 @@
+copy-on-select=true
+macos-titlebar-style=transparent
+font-family="HackGen Console NF"
+font-size=15
+
+font-feature = "-calt"
+font-feature = "-dlig"
+font-feature = "-liga"
+
+term = "xterm-256color"
