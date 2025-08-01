@@ -102,6 +102,9 @@ alias cpp='clang++'
 alias tf='terraform'
 # alias vim='nvim'
 
+# ssh-agent
+ssh-add -l | grep 'id_ed25519' > /dev/null 2>&1 || ssh-add ~/.ssh/id_ed25519 2> /dev/null
+
 # add brew path
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"

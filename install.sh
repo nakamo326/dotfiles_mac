@@ -3,6 +3,7 @@
 # create links
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.zshrc ~/.zshrc
+ln -s ~/dotfiles/.zprofile ~/.zprofile
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 mkdir -p ~/.config
 ln -s ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
@@ -12,7 +13,7 @@ ln -s ~/dotfiles/ghostty ~/.config/ghostty
 # ln -s ~/dotfiles/.wezterm.lua ~/.wezterm.lua
 
 # install volta without fixing zshrc
-curl https://get.volta.sh | bash -s -- --skip-setup
+# curl https://get.volta.sh | bash -s -- --skip-setup
 
 # disable apple music
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
