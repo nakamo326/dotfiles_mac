@@ -1,7 +1,12 @@
-copy-on-select=true
-macos-titlebar-style=transparent
-font-family="HackGen Console NF"
-font-size=15
+copy-on-select = true
+macos-titlebar-style = transparent
+
+font-family = "HackGen Console NF"
+
+font-size = 16
+
+window-height = 55
+window-width = 200
 
 font-feature = "-calt"
 font-feature = "-dlig"
