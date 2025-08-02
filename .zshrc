@@ -122,7 +122,7 @@ source "$HOME/.cargo/env"
 eval "$(/opt/homebrew/bin/mise activate zsh)"
 
 # zoxide
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 unalias zi
 
 # fzf
