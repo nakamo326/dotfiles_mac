@@ -41,13 +41,19 @@ setopt hist_ignore_space
 setopt hist_reduce_blanks
 
 # ────────────────────────────────────────────────────────────────
-# ⌨️ キーバインド & 補完システム
+# 🛠️ Zsh オプション設定
 # ────────────────────────────────────────────────────────────────
 # Emacs キーバインド
 bindkey -e
 
+setopt auto_list
+setopt auto_menu
+setopt auto_cd
+setopt nonomatch
+setopt autopushd
+setopt pushdignoredups
+
 # 補完操作のビジュアルチューニング
-setopt auto_list auto_menu auto_cd nonomatch
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
