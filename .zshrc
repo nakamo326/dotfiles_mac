@@ -152,3 +152,6 @@ complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 ## bun
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+## docker
+source <(docker completion zsh)
