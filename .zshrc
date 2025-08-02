@@ -1,3 +1,6 @@
+# ────────────────────────────────────────────────────────────────
+# 🚀 Zinit Plugin Manager のインストーラー & 初期設定
+# ────────────────────────────────────────────────────────────────
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -7,27 +10,28 @@ if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
         print -P "%F{160} The clone has failed.%f%b"
 fi
 
+# Zinit 本体読み込み
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
+# Annexes（追加プラグイン）を light モードで読み込み
 zinit light-mode for \
     zdharma-continuum/zinit-annex-as-monitor \
     zdharma-continuum/zinit-annex-bin-gem-node \
     zdharma-continuum/zinit-annex-patch-dl \
     zdharma-continuum/zinit-annex-rust
 
-### End of Zinit's installer chunk
-
+# プラグイン読み込み（light モード / スニペット）
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit snippet OMZ::lib/git.zsh
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 
-## history option ##
+# ────────────────────────────────────────────────────────────────
+# 📖 コマンド履歴オプション設定
+# ────────────────────────────────────────────────────────────────
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
@@ -36,29 +40,14 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
 
-# Use emacs keybindings
+# ────────────────────────────────────────────────────────────────
+# ⌨️ キーバインド & 補完システム
+# ────────────────────────────────────────────────────────────────
+# Emacs キーバインド
 bindkey -e
 
-# Use modern completion system
-autoload -Uz compinit
-compinit
-
-#enable bash completion
-autoload -Uz +X bashcompinit && bashcompinit
-source /opt/homebrew/etc/bash_completion.d/az
-
-
-# add kubecl completion
-source <(kubectl completion zsh)
-
-# terraform completion
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
-
-setopt auto_list
-setopt auto_menu
-setopt auto_cd
-setopt nonomatch
-
+# 補完操作のビジュアルチューニング
+setopt auto_list auto_menu auto_cd nonomatch
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
@@ -75,12 +64,16 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# colored GCC warnings and errors
+# ────────────────────────────────────────────────────────────────
+# 🌈 カラー設定 & ビルドフラグ
+# ────────────────────────────────────────────────────────────────
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-
 export MAKEFLAGS=-j4
+
+# ────────────────────────────────────────────────────────────────
+# 🔗 エイリアス集
+# ────────────────────────────────────────────────────────────────
 alias mkr="make fclean && make"
 alias make="make "
 alias re="fclean && make"
@@ -97,25 +90,29 @@ alias dc='docker-compose'
 alias cat='bat'
 alias cpp='clang++'
 alias tf='terraform'
-# alias vim='nvim'
 
-# ssh-agent
+# ────────────────────────────────────────────────────────────────
+# 🔐 ssh-agent & 鍵登録
+# ────────────────────────────────────────────────────────────────
 ssh-add -l | grep 'id_ed25519' > /dev/null 2>&1 || ssh-add ~/.ssh/id_ed25519 2> /dev/null
 
-# add brew path
+# ────────────────────────────────────────────────────────────────
+# 📂 PATH カスタマイズ
+# ────────────────────────────────────────────────────────────────
+# Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
 
-source "$HOME/.cargo/env"
-
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
-	PATH="$HOME/.local/bin:$PATH"
+    PATH="$HOME/.local/bin:$PATH"
 fi
 
-# add python path
-export PATH=$PATH:$HOME/Library/Python/3.11/bin
+source "$HOME/.cargo/env"
 
+# ────────────────────────────────────────────────────────────────
+# 🛠️ ツールの初期化
+# ────────────────────────────────────────────────────────────────
 # mise
 eval "$(/opt/homebrew/bin/mise activate zsh)"
 
@@ -132,6 +129,26 @@ eval "$(pyenv init --path)"
 # starship
 eval "$(starship init zsh)"
 
-# bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+# ────────────────────────────────────────────────────────────────
+# ⌨️ 補完システム初期化
+# ────────────────────────────────────────────────────────────────
 
+# initialization of zsh completion system
+autoload -Uz compinit
+compinit
+
+autoload -Uz +X bashcompinit && bashcompinit
+
+# load completions
+
+## az
+source /opt/homebrew/etc/bash_completion.d/az
+
+## kubectl
+source <(kubectl completion zsh)
+
+## terraform
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+## bun
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
