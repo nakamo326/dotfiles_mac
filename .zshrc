@@ -39,9 +39,6 @@ setopt hist_reduce_blanks
 # Use emacs keybindings
 bindkey -e
 
-# add brew completion
-fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
-
 # Use modern completion system
 autoload -Uz compinit
 compinit
