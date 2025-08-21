@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir -p ~/workspace
+
 # create links
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.zshrc ~/.zshrc
