@@ -26,3 +26,36 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 eval "$(/opt/homebrew/bin/brew shellenv)"
 brew update
 brew bundle
+
+### Apple Settings
+
+# スクロールバーを常に表示する
+defaults write -g AppleShowScrollBars -string Always
+
+# Dockのアイコンサイズ（16〜128の範囲で指定）
+defaults write com.apple.dock tilesize -int 45
+
+# Dockの拡大機能を有効化（true/false）
+defaults write com.apple.dock magnification -bool true
+
+# Dockの拡大時サイズ（16〜128の範囲）
+defaults write com.apple.dock largesize -int 100
+
+killall Dock
+
+
+#### finder
+
+# 隠しファイルを表示
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
+# 拡張子を常に表示
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# パスバーを表示（Finder下部に現在のパスが出る）
+defaults write com.apple.finder ShowPathbar -bool true
+
+# ステータスバーを表示（容量や項目数を表示）
+defaults write com.apple.finder ShowStatusBar -bool true
+
+killall Finder
