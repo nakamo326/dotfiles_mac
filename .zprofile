@@ -7,3 +7,6 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
   fi
   eval `cat $HOME/.ssh/ssh-agent`
 fi
+
+# Added by Obsidian
+export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
