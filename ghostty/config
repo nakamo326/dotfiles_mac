@@ -6,7 +6,7 @@ font-family = "HackGen Console NF"
 font-size = 16
 
 window-height = 55
-window-width = 200
+window-width = 230
 
 font-feature = "-calt"
 font-feature = "-dlig"
