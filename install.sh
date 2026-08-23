@@ -22,6 +22,12 @@ ln -s ~/dotfiles/mise/config.toml ~/.config/mise/config.toml
 # disable apple music
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 
+# disable CursorUIViewService (high CPU usage on macOS 15+, requires reboot)
+# https://zenn.dev/discus0434/articles/disable-cursoruiviewservice-macos
+sudo mkdir -p /Library/Preferences/FeatureFlags/Domain
+sudo defaults write /Library/Preferences/FeatureFlags/Domain/UIKit.plist \
+  redesigned_text_cursor -dict-add Enabled -bool NO
+
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 brew update
